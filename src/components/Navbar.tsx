@@ -41,11 +41,24 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link href="/" className="group">
                         <div className="flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="38" height="38">
-                                <rect width="100" height="100" rx="20" fill="#111" />
-                                <line x1="15" y1="22" x2="50" y2="76" stroke="#C8F000" strokeWidth="10" strokeLinecap="round" />
-                                <line x1="85" y1="22" x2="50" y2="76" stroke="#C8F000" strokeWidth="10" strokeLinecap="round" />
-                                <circle cx="50" cy="76" r="4" fill="#C8F000" />
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
+                                <defs>
+                                    <filter id="glow">
+                                        <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style={{ stopColor: "#C8F000" }} />
+                                        <stop offset="100%" style={{ stopColor: "#a0c800" }} />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="100" height="100" rx="20" fill="#0a0a0a" />
+                                <line x1="15" y1="22" x2="50" y2="76" stroke="url(#greenGrad)" strokeWidth="10" strokeLinecap="round" filter="url(#glow)" />
+                                <line x1="85" y1="22" x2="50" y2="76" stroke="url(#greenGrad)" strokeWidth="10" strokeLinecap="round" filter="url(#glow)" />
+                                <circle cx="50" cy="76" r="4" fill="#C8F000" filter="url(#glow)" />
                                 <circle cx="15" cy="22" r="3" fill="#C8F000" />
                                 <circle cx="85" cy="22" r="3" fill="#C8F000" />
                             </svg>
