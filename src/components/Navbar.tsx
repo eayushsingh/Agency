@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { Menu, X, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
@@ -41,13 +40,14 @@ export default function Navbar() {
         `}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <Image
-                            src="/vellix-logo-premium.svg"
-                            alt="Vellix Logo"
-                            width={40}
-                            height={40}
-                            className="rounded-xl"
-                        />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
+                            <rect width="100" height="100" rx="20" fill="#0a0a0a" />
+                            <line x1="15" y1="22" x2="50" y2="76" stroke="#C8F000" strokeWidth="10" strokeLinecap="round" />
+                            <line x1="85" y1="22" x2="50" y2="76" stroke="#C8F000" strokeWidth="10" strokeLinecap="round" />
+                            <circle cx="50" cy="76" r="3.5" fill="#C8F000" />
+                            <circle cx="15" cy="22" r="2.5" fill="#C8F000" />
+                            <circle cx="85" cy="22" r="2.5" fill="#C8F000" />
+                        </svg>
                         <span className="text-xl font-syne font-bold tracking-tight group-hover:text-[#C8F000] transition-colors">VELLIX</span>
                     </Link>
 
