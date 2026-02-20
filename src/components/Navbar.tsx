@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
@@ -40,12 +41,13 @@ export default function Navbar() {
         `}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="relative w-8 h-8 grid grid-cols-2 grid-rows-2 gap-1 bg-[#C8F000]/10 p-1.5 rounded-md group-hover:bg-[#C8F000]/20 transition-colors">
-                            <div className="bg-[#C8F000] rounded-[1px]"></div>
-                            <div className="bg-[#C8F000] rounded-[1px] opacity-60"></div>
-                            <div className="bg-[#C8F000] rounded-[1px] opacity-40"></div>
-                            <div className="bg-[#C8F000] rounded-[1px] opacity-80"></div>
-                        </div>
+                        <Image
+                            src="/vellix-logo-premium.svg"
+                            alt="Vellix Logo"
+                            width={40}
+                            height={40}
+                            className="rounded-xl"
+                        />
                         <span className="text-xl font-syne font-bold tracking-tight group-hover:text-[#C8F000] transition-colors">VELLIX</span>
                     </Link>
 
