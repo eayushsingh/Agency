@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400">
+  <defs>
+    <!-- Green gradient -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C8F000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a0c800;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle inner shadow -->
+    <filter id="innerShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background: dark rounded square -->
+  <rect width="100" height="100" rx="20" fill="#0a0a0a"/>
+  
+  <!-- Subtle grid pattern in background -->
+  <line x1="25" y1="0" x2="25" y2="100" stroke="#ffffff" stroke-width="0.2" opacity="0.06"/>
+  <line x1="50" y1="0" x2="50" y2="100" stroke="#ffffff" stroke-width="0.2" opacity="0.06"/>
+  <line x1="75" y1="0" x2="75" y2="100" stroke="#ffffff" stroke-width="0.2" opacity="0.06"/>
+  <line x1="0" y1="25" x2="100" y2="25" stroke="#ffffff" stroke-width="0.2" opacity="0.06"/>
+  <line x1="0" y1="50" x2="100" y2="50" stroke="#ffffff" stroke-width="0.2" opacity="0.06"/>
+  <line x1="0" y1="75" x2="100" y2="75" stroke="#ffffff" stroke-width="0.2" opacity="0.06"/>
+
+  <!-- Left arm of V (thicker, bold) -->
+  <line 
+    x1="15" y1="22" 
+    x2="50" y2="76" 
+    stroke="url(#greenGrad)" 
+    stroke-width="10" 
+    stroke-linecap="round"
+    filter="url(#glow)"
+  />
+
+  <!-- Right arm of V (thicker, bold) -->
+  <line 
+    x1="85" y1="22" 
+    x2="50" y2="76" 
+    stroke="url(#greenGrad)" 
+    stroke-width="10" 
+    stroke-linecap="round"
+    filter="url(#glow)"
+  />
+
+  <!-- Speed lines on left arm (detail) -->
+  <line x1="18" y1="33" x2="10" y2="33" stroke="#C8F000" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="22" y1="42" x2="11" y2="42" stroke="#C8F000" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+  <line x1="26" y1="51" x2="12" y2="51" stroke="#C8F000" stroke-width="1" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Small green dot at the bottom tip (like a velocity point) -->
+  <circle cx="50" cy="76" r="3.5" fill="#C8F000" filter="url(#glow)"/>
+
+  <!-- Two small dots top corners (design detail) -->
+  <circle cx="15" cy="22" r="2.5" fill="#C8F000" opacity="0.9"/>
+  <circle cx="85" cy="22" r="2.5" fill="#C8F000" opacity="0.9"/>
+</svg>

@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     url: "https://vellix.agency",
     siteName: "VELLIX Agency",
   },
+  icons: {
+    icon: "/vellix-logo-premium.svg",
+  },
 };
 
 export default function RootLayout({
@@ -37,6 +40,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/vellix-logo-premium.svg" type="image/svg+xml" />
+      </head>
       <body
         className={`${syne.variable} ${outfit.variable} font-outfit antialiased bg-[#0a0a0a] text-white`}
       >
